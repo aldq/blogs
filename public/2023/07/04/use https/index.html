@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>https配置 | dq-blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="apache启用以下模块1234567891011121314151617181920212223242526272829303132333435363738394041$  apachectl -MLoaded Modules: core_module (static) so_module (static) watchdog_module (static) http_module (static">
+<meta property="og:type" content="article">
+<meta property="og:title" content="https配置">
+<meta property="og:url" content="http://example.com/2023/07/04/use%20https/index.html">
+<meta property="og:site_name" content="dq-blog">
+<meta property="og:description" content="apache启用以下模块1234567891011121314151617181920212223242526272829303132333435363738394041$  apachectl -MLoaded Modules: core_module (static) so_module (static) watchdog_module (static) http_module (static">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-04T07:48:46.000Z">
+<meta property="article:modified_time" content="2023-07-04T08:40:19.831Z">
+<meta property="article:author" content="dq">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="dq-blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">dq-blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-use https" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/04/use%20https/" class="article-date">
+  <time class="dt-published" datetime="2023-07-04T07:48:46.000Z" itemprop="datePublished">2023-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      https配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="apache启用以下模块"><a href="#apache启用以下模块" class="headerlink" title="apache启用以下模块"></a>apache启用以下模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">$  apachectl -M</span><br><span class="line"></span><br><span class="line">Loaded Modules:</span><br><span class="line"> core_module (static)</span><br><span class="line"> so_module (static)</span><br><span class="line"> watchdog_module (static)</span><br><span class="line"> http_module (static)</span><br><span class="line"> log_config_module (static)</span><br><span class="line"> logio_module (static)</span><br><span class="line"> version_module (static)</span><br><span class="line"> unixd_module (static)</span><br><span class="line"> access_compat_module (shared)</span><br><span class="line"> alias_module (shared)</span><br><span class="line"> auth_basic_module (shared)</span><br><span class="line"> authn_core_module (shared)</span><br><span class="line"> authn_file_module (shared)</span><br><span class="line"> authz_core_module (shared)</span><br><span class="line"> authz_host_module (shared)</span><br><span class="line"> authz_user_module (shared)</span><br><span class="line"> autoindex_module (shared)</span><br><span class="line"> deflate_module (shared)</span><br><span class="line"> dir_module (shared)</span><br><span class="line"> env_module (shared)</span><br><span class="line"> filter_module (shared)</span><br><span class="line"> headers_module (shared)</span><br><span class="line"> mime_module (shared)</span><br><span class="line"> mpm_prefork_module (shared)</span><br><span class="line"> negotiation_module (shared)</span><br><span class="line"> php7_module (shared)</span><br><span class="line"> proxy_module (shared)</span><br><span class="line"> proxy_balancer_module (shared)</span><br><span class="line"> proxy_http_module (shared)</span><br><span class="line"> proxy_wstunnel_module (shared)</span><br><span class="line"> reqtimeout_module (shared)</span><br><span class="line"> rewrite_module (shared)</span><br><span class="line"> setenvif_module (shared)</span><br><span class="line"> slotmem_shm_module (shared)</span><br><span class="line"> socache_shmcb_module (shared)</span><br><span class="line"> ssl_module (shared)</span><br><span class="line"> status_module (shared)</span><br><span class="line"> wsgi_module (shared)</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置默认80端口强制重定向到443"><a href="#配置默认80端口强制重定向到443" class="headerlink" title="配置默认80端口强制重定向到443"></a>配置默认80端口强制重定向到443</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;VirtualHost *<span class="number">:80</span>&gt;</span></span><br><span class="line">	<span class="attribute">ServerAdmin</span> webmaster@localhost</span><br><span class="line">	<span class="attribute">DocumentRoot</span> /home/ehigh/work/html</span><br><span class="line">	<span class="attribute">RewriteEngine</span> <span class="literal">on</span></span><br><span class="line">	<span class="attribute">RewriteCond</span>   <span class="variable">%&#123;HTTPS&#125;</span> !=<span class="literal">on</span></span><br><span class="line">	<span class="attribute">RewriteRule</span>   ^(.*)  https://<span class="variable">%&#123;SERVER_NAME&#125;</span>$<span class="number">1</span><span class="meta"> [L,R]</span></span><br><span class="line">	<span class="section">&lt;Directory /home/ehigh/work/html&gt;</span></span><br><span class="line">                <span class="attribute">Options</span> FollowSymLinks MultiViews</span><br><span class="line">                <span class="attribute">AllowOverride</span> <span class="literal">All</span></span><br><span class="line">		<span class="attribute">Require</span> <span class="literal">all</span> granted</span><br><span class="line">	<span class="section">&lt;/Directory&gt;</span></span><br><span class="line">	<span class="attribute">ErrorLog</span> <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/error.log</span><br><span class="line">	<span class="attribute">CustomLog</span> <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/access.log combined</span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
+<p>RewriteEngine, RewriteCond, RewriteRule</p>
+<h2 id="配置默认的default-ssl-conf"><a href="#配置默认的default-ssl-conf" class="headerlink" title="配置默认的default-ssl.conf"></a>配置默认的default-ssl.conf</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;IfModule mod_ssl.c&gt;</span></span><br><span class="line">	<span class="section">&lt;VirtualHost _default_<span class="number">:443</span>&gt;</span></span><br><span class="line">		<span class="attribute">ServerAdmin</span> webmaster@localhost</span><br><span class="line"></span><br><span class="line">		<span class="attribute">DocumentRoot</span> /home/ehigh/work/html</span><br><span class="line">		<span class="attribute">ErrorLog</span> <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/error.log</span><br><span class="line">		<span class="attribute">CustomLog</span> <span class="variable">$&#123;APACHE_LOG_DIR&#125;</span>/access.log combined</span><br><span class="line">		<span class="attribute">SSLEngine</span> <span class="literal">on</span></span><br><span class="line">		<span class="attribute">SSLCertificateFile</span>	/home/ehigh/Downloads/uwb-certs/uwb_cert.pem</span><br><span class="line">		<span class="attribute">SSLCertificateKeyFile</span> /home/ehigh/Downloads/uwb-certs/uwb_cert.key</span><br><span class="line">		<span class="section">&lt;Directory /home/ehigh/work/html&gt;</span></span><br><span class="line">			<span class="attribute">Options</span> FollowSymLinks MultiViews</span><br><span class="line">            <span class="attribute">AllowOverride</span> <span class="literal">All</span></span><br><span class="line">            <span class="attribute">Require</span> <span class="literal">all</span> granted</span><br><span class="line">	    <span class="section">&lt;/Directory&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 代理websocket9001,9100,8892,9802, 前端访问wss:127.0.0.1/wss_9001</span></span><br><span class="line">		<span class="attribute">SSLProxyEngine</span> <span class="literal">on</span></span><br><span class="line">		<span class="attribute">ProxyRequests</span> <span class="literal">Off</span></span><br><span class="line">		<span class="attribute">ProxyPass</span> /wss_9001 ws://<span class="number">127.0.0.1:9001</span></span><br><span class="line">		<span class="attribute">ProxyPassReverse</span> /wss_9001 ws://<span class="number">127.0.0.1:9001</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="attribute">ProxyPass</span> /wss_9100 ws://<span class="number">127.0.0.1:9100</span></span><br><span class="line">		<span class="attribute">ProxyPassReverse</span> /wss_9100 ws://<span class="number">127.0.0.1:9100</span></span><br><span class="line"></span><br><span class="line">		<span class="attribute">ProxyPass</span> /wss_8892 ws://<span class="number">127.0.0.1:8892</span></span><br><span class="line">		<span class="attribute">ProxyPassReverse</span> /wss_8892 ws://<span class="number">127.0.0.1:8892</span></span><br><span class="line"></span><br><span class="line">		<span class="attribute">ProxyPass</span> /wss_9802 ws://<span class="number">127.0.0.1:9802</span></span><br><span class="line">		<span class="attribute">ProxyPassReverse</span> /wss_9802 ws://<span class="number">127.0.0.1:9802</span></span><br><span class="line"></span><br><span class="line">		<span class="attribute">SSLProtocol</span> <span class="literal">all</span> -SSLv2 -SSLv3</span><br><span class="line">		<span class="attribute">SSLCipherSuite</span> HIGH:!RC4:!MD5:!aNULL:!eNULL:!NULL:!DH:!EDH:!EXP:+MEDIUM</span><br><span class="line">		<span class="section">&lt;FilesMatch <span class="string">&quot;\.(cgi|shtml|phtml|php)$&quot;</span>&gt;</span></span><br><span class="line">				<span class="attribute">SSLOptions</span> +StdEnvVars</span><br><span class="line">		<span class="section">&lt;/FilesMatch&gt;</span></span><br><span class="line">		<span class="section">&lt;Directory /usr/lib/cgi-bin&gt;</span></span><br><span class="line">				<span class="attribute">SSLOptions</span> +StdEnvVars</span><br><span class="line">		<span class="section">&lt;/Directory&gt;</span></span><br><span class="line">	<span class="section">&lt;/VirtualHost&gt;</span></span><br><span class="line"><span class="section">&lt;/IfModule&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="python工程调用接口"><a href="#python工程调用接口" class="headerlink" title="python工程调用接口"></a>python工程调用接口</h2><p>跳过验证</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">requests.get(<span class="string">&quot;https://127.0.0.1/EHCommon/admin/user/login&quot;</span>, verify=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>证书验证</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">requests.get(<span class="string">&quot;https://127.0.0.1/EHCommon/admin/user/login&quot;</span>, cert=(<span class="string">&#x27;/path/server.crt&#x27;</span>, <span class="string">&#x27;/path/server.key&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="php工程调用接口"><a href="#php工程调用接口" class="headerlink" title="php工程调用接口"></a>php工程调用接口</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi work/html/EHCommon/vendor/guzzlehttp/guzzle/src/Client.php</span><br></pre></td></tr></table></figure>
+<p>跳过验证</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$config</span> = []</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">isset</span>(<span class="variable">$config</span>[<span class="string">&#x27;handler&#x27;</span>])) &#123;</span><br><span class="line">        <span class="variable">$config</span>[<span class="string">&#x27;handler&#x27;</span>] = <span class="title class_">HandlerStack</span>::<span class="title function_ invoke__">create</span>();</span><br><span class="line">    &#125; <span class="keyword">elseif</span> (!\<span class="title function_ invoke__">is_callable</span>(<span class="variable">$config</span>[<span class="string">&#x27;handler&#x27;</span>])) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">InvalidArgumentException</span>(<span class="string">&#x27;handler must be a callable&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Convert the base_uri to a UriInterface</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$config</span>[<span class="string">&#x27;base_uri&#x27;</span>])) &#123;</span><br><span class="line">        <span class="variable">$config</span>[<span class="string">&#x27;base_uri&#x27;</span>] = <span class="title class_">Psr7\Utils</span>::<span class="title function_ invoke__">uriFor</span>(<span class="variable">$config</span>[<span class="string">&#x27;base_uri&#x27;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$config</span>[<span class="string">&#x27;verify&#x27;</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">configureDefaults</span>(<span class="variable">$config</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>证书验证</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$config</span> = []</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">isset</span>(<span class="variable">$config</span>[<span class="string">&#x27;handler&#x27;</span>])) &#123;</span><br><span class="line">        <span class="variable">$config</span>[<span class="string">&#x27;handler&#x27;</span>] = <span class="title class_">HandlerStack</span>::<span class="title function_ invoke__">create</span>();</span><br><span class="line">    &#125; <span class="keyword">elseif</span> (!\<span class="title function_ invoke__">is_callable</span>(<span class="variable">$config</span>[<span class="string">&#x27;handler&#x27;</span>])) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">InvalidArgumentException</span>(<span class="string">&#x27;handler must be a callable&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Convert the base_uri to a UriInterface</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$config</span>[<span class="string">&#x27;base_uri&#x27;</span>])) &#123;</span><br><span class="line">        <span class="variable">$config</span>[<span class="string">&#x27;base_uri&#x27;</span>] = <span class="title class_">Psr7\Utils</span>::<span class="title function_ invoke__">uriFor</span>(<span class="variable">$config</span>[<span class="string">&#x27;base_uri&#x27;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$config</span>[<span class="string">&#x27;verify&#x27;</span>] = <span class="string">&#x27;/path/to/cert.pem&#x27;</span>;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">configureDefaults</span>(<span class="variable">$config</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/04/use%20https/" data-id="cljo1tgdp0002k8xf8y05g9be" data-title="https配置" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/07/04/vi-use/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vi-use</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/07/04/use%20https/">https配置</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/04/vi-use/">vi-use</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/03/How-to-use-Django-with-Apache-and-mod-wsgi/">apache deploy django</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/03/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 dq<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
